@@ -60,9 +60,8 @@ sheet = ws.active
 
 file = open("Hostel_Alloted_Students.txt",'a')
 for students in range(2,42):
-    file.write("1. ")
-    file.write(sheet.cell(students,1).value)
-    file.write("\n")
+    name = sheet.cell(students,1).value
+    file.write(f"{students-1}. {name}\n")
 file.close()
 ws.save("hostel_alloted.xlsx")
 
